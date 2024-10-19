@@ -1,0 +1,39 @@
+:root {
+  --c-white: #d8e4fc;
+  --c-dark: #171718;
+  --c-blue: #414ce4;
+  --c-purple: #5e217e;
+}
+
+:root {
+  --color-background: var(--c-white);
+  --color-background1: var(--c-dark);
+  --color-text: var(--c-dark);
+  --color-active: var(--c-purple);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--c-dark);
+    --color-background1: var(--c-white);
+    --color-text: var(--c-white);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  height: 100vh;
+  width: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  font-size: 15px;
+}
