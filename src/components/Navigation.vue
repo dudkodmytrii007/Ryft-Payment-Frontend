@@ -5,6 +5,8 @@
   import IconMessage2 from './icons/IconMessage2.vue'
   import IconApps1 from './icons/IconApps1.vue'
   import IconApps2 from './icons/IconApps2.vue'
+  import IconGroups1 from './icons/IconUsers1.vue'
+  import IconGroups2 from './icons/IconUsers2.vue'
 </script>
 
 <template>
@@ -19,6 +21,12 @@
       <IconApps2 class="link__icon2 link__icon2-blue" />
       <IconApps1 class="link__icon1" />
       <span class="link__text">Start</span>
+    </RouterLink>
+
+    <RouterLink to="/Grupa" class="link" active-class="active-link">
+      <IconGroups2 class="link__icon2 link__icon2-orange" />
+      <IconGroups1 class="link__icon1" />
+      <span class="link__text">Grupy</span>
     </RouterLink>
   </nav>
 </template>
@@ -64,6 +72,7 @@
     height: max-content;
     fill: #b6c0d9;
     position: relative;
+    transition: fill 0.3s ease;
   }
 
   .link__icon2 {
@@ -74,11 +83,35 @@
     position: absolute;
     top: 11px;
     left: 7px;
+    transition: fill 0.3s ease;
   }
 
   .link__text {
     font-weight: bold;
     color: #8a95b2;
+    transition: color 0.3s ease;
+  }
+
+  @keyframes iconMove {
+    0% {
+      transform: scale(0.9) rotate(0deg);
+    }
+    25% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    75% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  .link:focus .link__icon1 {
+    animation: iconMove 0.8s ease-in-out;
   }
 
   .link:hover .link__icon1,
@@ -97,5 +130,10 @@
   .link:hover .link__icon2-blue,
   .active-link .link__icon2-blue {
     fill: blue;
+  }
+
+  .link:hover .link__icon2-orange,
+  .active-link .link__icon2-orange {
+    fill: rgb(249, 158, 11);
   }
 </style>
