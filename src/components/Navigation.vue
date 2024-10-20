@@ -1,104 +1,101 @@
 <script setup lang="ts">
   import { RouterLink, RouterView } from 'vue-router'
-  import IconHome from './icons/IconHome.vue'
-  import IconBell from './icons/IconBell.vue'
-  import IconSettings from './icons/IconSettings.vue'
-  import IconPower from './icons/IconPower.vue'
+
+  import IconMessage1 from './icons/IconMessage1.vue'
+  import IconMessage2 from './icons/IconMessage2.vue'
+  import IconApps1 from './icons/IconApps1.vue'
+  import IconApps2 from './icons/IconApps2.vue'
 </script>
 
 <template>
   <nav>
-    <RouterLink to="HomeView">
-      <img src="/logo.webp" alt="Logo Ryft" class="logo">
+    <RouterLink to="/Czat" class="link" active-class="active-link">
+      <IconMessage2 class="link__icon2 link__icon2-red" />
+      <IconMessage1 class="link__icon1" />
+      <span class="link__text">Czat</span>
     </RouterLink>
 
-    <div class="nav__center">
-      <router-link to="/" class="link" active-class="link-active">
-        <IconHome class="icon" />
-      </router-link>
-
-      <router-link to="/" class="link" active-class="link-active">
-        <IconBell class="icon" />
-      </router-link>
-      
-      <router-link to="/Ustawienia" class="link" active-class="link-active">
-        <IconSettings class="icon" />
-      </router-link>
-
-      <router-link to="/Ustawienia" class="link" active-class="link-active">
-        <IconSettings class="icon" />
-      </router-link>
-
-      <router-link to="/Ustawienia" class="link" active-class="link-active">
-        <IconSettings class="icon" />
-      </router-link>
-    </div>
-
-    <IconPower class="icon" />
+    <RouterLink to="/" class="link" active-class="active-link">
+      <IconApps2 class="link__icon2 link__icon2-blue" />
+      <IconApps1 class="link__icon1" />
+      <span class="link__text">Start</span>
+    </RouterLink>
   </nav>
 </template>
 
 <style scoped type="scss">
   nav {
-    height: calc(100vh - 16px);
-    min-height: 500px;
-    width: 70px;
-    background-color: var(--color-background1);
-    border-radius: 14px;
-    margin: 8px 0 8px 8px;
-    padding-bottom: 3%;
+    width: calc(100% - 14px);
+    height: 62px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    bottom: 7px;
+    border-radius: 16px;
+    background-color: #ffffff;
+  }
+
+  .link {
+    height: 100%;
+    width: max-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    gap: 2px;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s ease;
   }
 
-  .logo {
-    width: 100%;
-    height: max-content;
-    border-radius: 14px 14px 0 0;
-    border-bottom: 7px solid var(--color-background);
-  }
-
-  .nav__center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .icon {
-    width: 56px;
-    height: max-content;
-    padding: 10px;
-    fill: var(--color-background);
-    border-radius: 14px;
-  }
-
-  .icon:hover {
-    transform: scale(1.15);
+  .link:hover {
+    transform: scale(0.9);
     cursor: pointer;
-    fill: var(--color-active);
   }
 
-  .link-active > .icon {
-    fill: var(--color-background1);
-    background: var(--color-background);
-    transform: scale(0.85);
+  .active-link {
+    transform: scale(1.1);
   }
 
-  @media only screen and (max-width: 600px) {
-    nav {
-      width: 100%;
-      height: 70px;
-      margin: 0;
-      border-radius: 0;
-      flex-direction: row;
-    }
+  .link__icon1 {
+    width: 26px;
+    height: max-content;
+    fill: #b6c0d9;
+    position: relative;
+  }
 
-    .logo {
-      display: none;
-    }
+  .link__icon2 {
+    width: 24px;
+    height: max-content;
+    fill: #b6c0d9;
+    opacity: 0.5;
+    position: absolute;
+    top: 11px;
+    left: 7px;
+  }
+
+  .link__text {
+    font-weight: bold;
+    color: #8a95b2;
+  }
+
+  .link:hover .link__icon1,
+  .link:hover .link__text,
+  .active-link .link__icon1,
+  .active-link .link__text {
+    color: #3d4256;
+    fill: #3d4256;
+  }
+
+  .link:hover .link__icon2-red,
+  .active-link .link__icon2-red {
+    fill: red;
+  }
+
+  .link:hover .link__icon2-blue,
+  .active-link .link__icon2-blue {
+    fill: blue;
   }
 </style>
