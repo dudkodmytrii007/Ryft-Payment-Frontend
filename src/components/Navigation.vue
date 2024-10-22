@@ -1,139 +1,111 @@
 <script setup lang="ts">
   import { RouterLink, RouterView } from 'vue-router'
 
-  import IconMessage1 from './icons/IconMessage1.vue'
-  import IconMessage2 from './icons/IconMessage2.vue'
-  import IconApps1 from './icons/IconApps1.vue'
-  import IconApps2 from './icons/IconApps2.vue'
-  import IconGroups1 from './icons/IconUsers1.vue'
-  import IconGroups2 from './icons/IconUsers2.vue'
+  import IconMessage from './icons/IconMessage2.vue'
+  import IconApps from './icons/IconApps2.vue'
+  import IconGroups from './icons/IconUsers2.vue'
 </script>
 
 <template>
   <nav>
     <RouterLink to="/Czat" class="link" active-class="active-link">
-      <IconMessage2 class="link__icon2 link__icon2-red" />
-      <IconMessage1 class="link__icon1" />
+      <IconMessage class="link__icon" />
       <span class="link__text">Czat</span>
     </RouterLink>
 
     <RouterLink to="/" class="link" active-class="active-link">
-      <IconApps2 class="link__icon2 link__icon2-blue" />
-      <IconApps1 class="link__icon1" />
+      <IconApps class="link__icon" />
       <span class="link__text">Start</span>
     </RouterLink>
 
     <RouterLink to="/Grupa" class="link" active-class="active-link">
-      <IconGroups2 class="link__icon2 link__icon2-orange" />
-      <IconGroups1 class="link__icon1" />
+      <IconGroups class="link__icon" />
       <span class="link__text">Grupy</span>
     </RouterLink>
   </nav>
 </template>
-
+a
 <style scoped type="scss">
   nav {
-    width: calc(100% - 14px);
-    height: 62px;
+    width: 100%;
+    height: 72px;
     position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    bottom: 7px;
-    border-radius: 16px;
-    background-color: #ffffff;
+    bottom: 0;
+    background-color: var(--color-background2);
   }
 
   .link {
-    height: 100%;
-    width: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2px;
+    gap: 5px;
     text-decoration: none;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
-
-  .link:hover {
-    transform: scale(0.9);
     cursor: pointer;
+    transition: transform 0.3s ease, color 4s ease;
   }
 
-  .active-link {
-    transform: scale(1.1);
-  }
-
-  .link__icon1 {
-    width: 26px;
+  .link__icon {
+    width: 20px;
     height: max-content;
-    fill: #b6c0d9;
-    position: relative;
-    transition: fill 0.3s ease;
-  }
-
-  .link__icon2 {
-    width: 24px;
-    height: max-content;
-    fill: #b6c0d9;
-    opacity: 0.5;
-    position: absolute;
-    top: 11px;
-    left: 7px;
+    fill: var(--color-icon);
     transition: fill 0.3s ease;
   }
 
   .link__text {
-    font-weight: bold;
-    color: #8a95b2;
+    color: var(--color-text2);
     transition: color 0.3s ease;
   }
 
-  @keyframes iconMove {
+  .link:hover .link__text {
+    color: var(--color-text1);
+  }
+
+  .link:not(.active-link):hover .link__icon {
+    animation: linkHover 0.8s ease-in-out infinite;
+  }
+
+  .active-link .link__icon,
+  .active-link .link__text {
+    fill: var(--color-main);
+    color: var(--color-text1);
+  }
+
+  .link:focus,
+  .link:active {
+    animation: linkActivation 1s ease;
+  }
+
+  @keyframes linkHover {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+  @keyframes linkActivation {
     0% {
-      transform: scale(0.9) rotate(0deg);
-    }
-    25% {
-      transform: rotate(45deg);
+      transform: scale(1);
     }
     50% {
       transform: scale(1.2);
     }
-    75% {
-      transform: rotate(45deg);
-    }
     100% {
-      transform: scale(1) rotate(0deg);
+      transform: scale(1);
     }
-  }
-
-  .link:focus .link__icon1 {
-    animation: iconMove 0.8s ease-in-out;
-  }
-
-  .link:hover .link__icon1,
-  .link:hover .link__text,
-  .active-link .link__icon1,
-  .active-link .link__text {
-    color: #3d4256;
-    fill: #3d4256;
-  }
-
-  .link:hover .link__icon2-red,
-  .active-link .link__icon2-red {
-    fill: red;
-  }
-
-  .link:hover .link__icon2-blue,
-  .active-link .link__icon2-blue {
-    fill: blue;
-  }
-
-  .link:hover .link__icon2-orange,
-  .active-link .link__icon2-orange {
-    fill: rgb(249, 158, 11);
   }
 </style>
