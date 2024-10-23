@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <nav>
+  <nav :class="{ 'active-chat': RouterLink === '/Czat' }">
     <RouterLink to="/Czat" class="link" active-class="active-link">
       <IconMessage class="link__icon" />
       <span class="link__text">Czat</span>
@@ -24,18 +24,20 @@
     </RouterLink>
   </nav>
 </template>
-a
+
 <style scoped type="scss">
   nav {
     width: 100%;
     height: 72px;
-    position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    bottom: 0;
     background-color: var(--color-background2);
+  }
+
+  .active-chat {
+    background-color: red;
   }
 
   .link {
