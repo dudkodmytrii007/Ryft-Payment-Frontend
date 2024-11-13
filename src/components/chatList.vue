@@ -1,7 +1,7 @@
 <template>
   <ul class="chatList" role="list">
     <li
-      v-for="chat in myChats"
+      v-for="chat in chats"
       :key="chat.login.uuid"
       class="chatList__item"
       role="listitem"
@@ -24,21 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-  import axios from '../services/axios'
-  import { ref } from 'vue'
-
-  const myChats = ref([])
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('?results=10')
-      myChats.value = response.data.results
-    } catch (error) {
-      console.error('Error while downloading data:', error)
-    }
-  }
-
-  fetchData()
+  const { chats } = defineProps(['chats'])
 </script>
 
 <style scoped lang="scss">

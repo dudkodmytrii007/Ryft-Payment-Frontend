@@ -1,17 +1,32 @@
-<script setup lang="ts">
-  import chatList from '../components/chatList.vue'
-</script>
-
 <template>
   <div class="inBox">
     <span>New</span>
-    <chatList />
+    <chatList :chats="myChats" />
     <span>Other</span>
-    <chatList />
+    <chatList :chats="myChats" />
   </div>
 
   <div class="chat"></div>
 </template>
+
+<script lang="ts" setup>
+  import axios from '../services/axios'
+  import { ref } from 'vue'
+  import chatList from '../components/chatList.vue'
+
+  const myChats = ref([])
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('?results=10')
+      myChats.value = response.data.results
+    } catch (error) {
+      console.error('Error while downloading data:', error)
+    }
+  }
+
+  fetchData()
+</script>
 
 <style scoped lang="scss">
   .inBox {
