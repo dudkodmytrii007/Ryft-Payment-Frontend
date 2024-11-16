@@ -15,6 +15,7 @@
 
 <style lang="scss" scoped>
   .chatItem {
+    position: relative;
     height: 82px;
     display: grid;
     grid-template-columns: 50px 2.8fr 1fr;
@@ -23,8 +24,14 @@
     padding: 16px;
   }
 
-  .chatItem:not(:last-child) {
-    border-bottom: 1px solid var(--color-background2);
+  .chatItem:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    width: calc(100% - 24px);
+    height: 1px;
+    background-color: var(--color-background2);
   }
 
   .chatItem:hover {
