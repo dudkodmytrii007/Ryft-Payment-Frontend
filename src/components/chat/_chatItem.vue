@@ -16,20 +16,20 @@
 <style lang="scss" scoped>
   .chatItem {
     position: relative;
-    height: 82px;
+    height: 85px;
     display: grid;
-    grid-template-columns: 50px 2.8fr 1fr;
+    grid-template-columns: 55px 2.8fr 1fr;
     grid-template-rows: 1fr 1fr;
-    column-gap: 12px;
-    padding: 16px;
+    column-gap: 15px;
+    padding: 15px;
   }
 
   .chatItem:not(:last-child)::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 12px;
-    width: calc(100% - 24px);
+    left: 15px;
+    width: calc(100% - 30px);
     height: 1px;
     background-color: var(--color-background2);
   }
@@ -40,8 +40,8 @@
   }
 
   .chatItem__avatar {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     grid-row: span 2;
     border-radius: 50%;
     object-fit: cover;
