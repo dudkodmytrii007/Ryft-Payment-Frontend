@@ -3,7 +3,7 @@
     <img :src="chat.picture.thumbnail" :alt="`Profile picture of ${chat.name.first} ${chat.name.last}`" class="chatItem__avatar" />
     <h3 class="chatItem__username">{{ chat.name.first }} {{ chat.name.last }}</h3>
     <p class="chatItem__lastMsg">Ostatnia wiadomość</p>
-    <span class="chatItem__badge">1</span>
+    <span class="chatItem__badge">4</span>
     <span class="chatItem__lastActive">6:49 PM</span>
   </li>
 </template>
@@ -16,20 +16,20 @@
 <style lang="scss" scoped>
   .chatItem {
     position: relative;
-    height: 85px;
+    height: 95px;
     display: grid;
     grid-template-columns: 55px 2.8fr 1fr;
     grid-template-rows: 1fr 1fr;
-    column-gap: 15px;
-    padding: 15px;
+    column-gap: 18px;
+    padding: 20px 25px;
   }
 
   .chatItem:not(:last-child)::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 15px;
-    width: calc(100% - 30px);
+    left: 25px;
+    width: calc(100% - 50px);
     height: 1px;
     background-color: var(--color-background2);
   }
@@ -70,7 +70,8 @@
   }
 
   .chatItem__badge {
-    width: 17px;
+    width: max-content;
+    min-width: 17px;
     height: 17px;
     grid-column: 3;
     grid-row: 2;
@@ -80,9 +81,10 @@
     justify-content: center;
     background-color: var(--c-red);
     color: var(--color-background1);
-    border-radius: 50%;
+    border-radius: 14px;
     font-size: 80%;
     font-weight: bold;
+    padding: 3px;
   }
 
   .chatItem:hover > .chatItem__badge {
