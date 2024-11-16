@@ -115,9 +115,11 @@
   --c-dark: #252730;
   --c-darker: #1F2127;
   --c-lightGray: #878897;
-  --c-darkGray: #54565D;
+  --c-darkGray: color-mix(in srgb, var(--c-lightGray) 65%, black);
   --c-light: #FFFFFF;
   --c-purple: #695DCC;
+  --c-red: #ED6D55;
+  --c-blue: #538AF7;
 }
 
 :root {
@@ -125,7 +127,7 @@
   --color-background2: var(--c-dark);
   --color-text1: var(--c-light);
   --color-text2: var(--c-lightGray);
-  --color-icon: var(--c-lightGray);
+  --color-icon: var(--c-darkGray);
   --color-main: var(--c-purple);
 
   --color-s-online: #64B385;

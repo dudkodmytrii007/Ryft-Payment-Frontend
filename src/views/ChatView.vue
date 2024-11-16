@@ -1,51 +1,69 @@
 <template>
-  <div class="inBox">
-    <span>New</span>
-    <chatList :chats="myChats" />
-    <span>Other</span>
-    <chatList :chats="myChats" />
+  <div class="chats">
+    <ul class="chats__list">
+      <chatItem v-for="chat in chats" :chat="chat" />
+    </ul>
   </div>
 
-  <div class="chat"></div>
+  <div class="chatMessages"></div>
 </template>
 
 <script lang="ts" setup>
+  import chatItem from '../components/chat/_chatItem.vue'
   import axios from '../services/axios'
-  import { ref } from 'vue'
-  import chatList from '../components/chatList.vue'
+  import { ref, onMounted } from 'vue'
 
-  const myChats = ref([])
+  const chats = ref([])
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('?results=10')
-      myChats.value = response.data.results
+      const response = await axios.get('?results=30')
+      chats.value = response.data.results
     } catch (error) {
       console.error('Error while downloading data:', error)
     }
   }
 
-  fetchData()
+  onMounted(() => {
+    fetchData()
+  })
 </script>
 
 <style scoped lang="scss">
-  .inBox {
+  // chats (list on the left)
+  .chats {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .chat {
+  .chats__list {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Internet Explorer, Edge
+  }
+
+  .chat__list::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Opera
+  }
+
+  // chat messages (window on the right)
+  .chatMessages {
     position: absolute;
     width: 100%;
     height: 100%;
     transform: translateX(100%);
   }
 
+  // Responsive
   @media (min-width: 768px) {
-    .inBox {
+    .chats {
       width: 380px;
     }
 
-    .chat {
+    .chatMessages {
       position: static;
       width: calc(100% - 380px);
       transform: none;
