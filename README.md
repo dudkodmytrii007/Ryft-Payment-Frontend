@@ -3,7 +3,7 @@ This project is the **frontend** component of the **Ryft** platform, an educatio
 
 
 
-### 🛠️ Tools and Technologies
+## 🛠️ Tools and Technologies
 ![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -13,7 +13,7 @@ This project is the **frontend** component of the **Ryft** platform, an educatio
 
 
 
-### 📜 License
+## 📜 License
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 By [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://github.com/PiotrO9)
 
