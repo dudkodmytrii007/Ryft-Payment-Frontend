@@ -1,7 +1,7 @@
 # Ryft Frontend
 This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.
 
-
+<br>
 
 ## 🛠️ Tools and Technologies
 ![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
@@ -11,13 +11,13 @@ This project is the **frontend** component of the **Ryft** platform, an educatio
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-
+<br>
 
 ## 📜 License
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)<br>
 By [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://github.com/PiotrO9)
 
-
+<br>
 
 ## 🚀 Getting Started
 1. Clone the repository:
