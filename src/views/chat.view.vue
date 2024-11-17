@@ -4,7 +4,7 @@
       <arrowIcon class="chats__icon" /> All Messages
     </h3>
     <ul class="chats__list">
-      <chatItem v-for="chat in chats" :chat="chat" />
+      <chatItem v-for="chat in chats" :key="chat.userId" :chat="chat" />
     </ul>
   </div>
 
@@ -21,11 +21,11 @@
 
   const fetchData = async () => {
     try {
-      const response = await axios.post('auth/user', {
-        userId: '1ac2d4c5-82bc-436d-bc41-ae0fb7513ea4'
+      const response = await axios.post('chat/getChats', {
+        userId: '8f8bcbd7-16aa-44ae-ba6d-764db0ca7f2e'
       })
-      chats.value = response.data.results
-      console.log(chats.value)
+      chats.value = response.data
+      console.log(response.data)
     } catch (error) {
       console.error('Error while downloading data:', error)
     }

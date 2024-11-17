@@ -1,7 +1,7 @@
 <template>
-  <li class="chatItem">
-    <img :src="chat.picture.thumbnail" :alt="`Profile picture of ${chat.name.first} ${chat.name.last}`" class="chatItem__avatar" />
-    <h4 class="chatItem__username">{{ chat.name.first }} {{ chat.name.last }}</h4>
+  <li class="chatItem" v-if="chat">
+    <img :src="chat.avatar" :alt="`Profile picture of ${chat.name}`" class="chatItem__avatar" />
+    <h4 class="chatItem__username">{{ chat.name }}</h4>
     <p class="chatItem__lastMsg">Ostatnia wiadomość</p>
     <span class="chatItem__badge">4</span>
     <span class="chatItem__lastActive">6:49 PM</span>

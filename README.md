@@ -1,33 +1,33 @@
-# Ryft-frontend
+# Ryft Frontend
+This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+### 🛠️ Tools and Technologies
+[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=fff)](#)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+[![Sass](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff)](#)
+[![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Type Support for `.vue` Imports in TS
+### 📜 License
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) by [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://github.com/PiotrO9)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+## 🚀 Getting Started
+Clone the repository and set up the project locally: 
+```bash  
+git clone https://github.com/your-username/ryft-frontend.git  
+cd ryft-frontend  
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+* Compile and Hot-Reload for Development
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
+* Type-Check, Compile, and Minify for Production
 ```sh
 npm run build
 ```
