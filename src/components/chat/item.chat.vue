@@ -31,12 +31,12 @@
     left: 25px;
     width: calc(100% - 50px);
     height: 1px;
-    background-color: var(--color-background2);
+    background-color: var(--color-background-second);
   }
 
   .chatItem:hover {
     cursor: pointer;
-    background-color: var(--color-background2);
+    background-color: var(--color-background-second);
     border-left: 2px solid var(--color-main);
   }
 
@@ -59,7 +59,7 @@
     grid-row: 2;
     align-self: start;
     font-size: 90%;
-    color: var(--color-text2);
+    color: var(--color-text-second);
   }
 
   .chatItem__lastActive {
@@ -81,7 +81,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--c-red);
-    color: var(--color-background1);
+    color: var(--color-background-main);
     border-radius: 14px;
     font-size: 80%;
     font-weight: bold;
@@ -89,6 +89,6 @@
   }
 
   .chatItem:hover > .chatItem__badge {
-    color: var(--color-background2);
+    color: var(--color-background-second);
   }
 </style>

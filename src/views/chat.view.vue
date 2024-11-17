@@ -50,7 +50,7 @@
     align-items: center;
     gap: 5px;
     padding: 0 5px;
-    color: var(--color-text2);
+    color: var(--color-text-second);
   }
 
   .chats__icon {

@@ -1,9 +1,53 @@
-@import './base.scss';
+@import './fonts';
+@import './elements';
 
-#app {
+:root {
+  --color-dark: #252730;
+  --color-darker: #1F2127;
+  --color-light-gray: #878897;
+  --color-dark-gray: color-mix(in srgb, var(--c-light-gray) 65%, black);
+  --color-light: #FFFFFF;
+  --color-purple: #695DCC;
+  --color-red: #ED6D55;
+  --color-blue: #538AF7;
+
+  --color-background-main: var(--c-darker);
+  --color-background-second: var(--c-dark);
+  --color-text-main: var(--c-light);
+  --color-text-second: var(--c-lightGray);
+  --color-icon: var(--c-darkGray);
+  --color-main: var(--c-purple);
+
+  --color-status-online: #64B385;
+  --color-status-away: #EEAA41;
+  --color-status-busy: #DE554E;
+  --color-status-offline: #757D8A;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     
+//   }
+// }
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+body {
+  height: 100dvh;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: var(--color-text-main);
+  background: var(--color-background-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
