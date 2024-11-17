@@ -1,20 +1,20 @@
-<template>
-  <li class="chatItem" v-if="chat">
-    <img :src="chat.avatar" :alt="`Profile picture of ${chat.name}`" class="chatItem__avatar" />
-    <h4 class="chatItem__username">{{ chat.name }}</h4>
-    <p class="chatItem__lastMsg">Ostatnia wiadomość</p>
-    <span class="chatItem__badge">4</span>
-    <span class="chatItem__lastActive">6:49 PM</span>
-  </li>
-</template>
-
 <script lang="ts" setup>
   const { chat } = defineProps(['chat'])
   console.log(chat)
 </script>
 
-<style lang="scss" scoped>
-  .chatItem {
+<template>
+  <li class="chat-item" v-if="chat">
+    <img :src="chat.avatar" :alt="`Profile picture of ${chat.name}`" class="chat-item-avatar" />
+    <h4 class="chat-item-username">{{ chat.name }}</h4>
+    <p class="chat-item-lastmsg">Ostatnia wiadomość</p>
+    <span class="chat-item-badge">4</span>
+    <span class="chat-item-lastactive">6:49 PM</span>
+  </li>
+</template>
+
+<style scoped>
+  .chat-item {
     position: relative;
     height: 91px;
     display: grid;
@@ -24,7 +24,7 @@
     padding: 18px 25px;
   }
 
-  .chatItem:not(:last-child)::after {
+  .chat-item:not(:last-child)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -34,13 +34,13 @@
     background-color: var(--color-background-second);
   }
 
-  .chatItem:hover {
+  .chat-item:hover {
     cursor: pointer;
     background-color: var(--color-background-second);
     border-left: 2px solid var(--color-main);
   }
 
-  .chatItem__avatar {
+  .chat-item-avatar {
     width: 55px;
     height: 55px;
     grid-row: span 2;
@@ -48,13 +48,13 @@
     object-fit: cover;
   }
 
-  .chatItem__username {
+  .chat-item-username {
     grid-column: 2;
     grid-row: 1;
     align-self: end;
   }
 
-  .chatItem__lastMsg {
+  .chat-item-lastmsg {
     grid-column: 2;
     grid-row: 2;
     align-self: start;
@@ -62,7 +62,7 @@
     color: var(--color-text-second);
   }
 
-  .chatItem__lastActive {
+  .chat-item-lastactive {
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
@@ -70,7 +70,7 @@
     color: var(--color-icon);
   }
 
-  .chatItem__badge {
+  .chat-item-badge {
     width: max-content;
     min-width: 17px;
     height: 17px;
@@ -80,7 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--c-red);
+    background-color: var(--color-red);
     color: var(--color-background-main);
     border-radius: 14px;
     font-size: 80%;
@@ -88,7 +88,7 @@
     padding: 3px;
   }
 
-  .chatItem:hover > .chatItem__badge {
+  .chat-item:hover > .chat-item-badge {
     color: var(--color-background-second);
   }
 </style>

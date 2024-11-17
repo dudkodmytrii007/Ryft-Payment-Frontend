@@ -1,27 +1,14 @@
-<template>
-  <div class="chats">
-    <h3 class="chats__title3">
-      <arrowIcon class="chats__icon" /> All Messages
-    </h3>
-    <ul class="chats__list">
-      <chatItem v-for="chat in chats" :key="chat.userId" :chat="chat" />
-    </ul>
-  </div>
-
-  <div class="chatMessages"></div>
-</template>
-
 <script lang="ts" setup>
   import arrowIcon from '../components/icons/arrow.icon.vue'
-  import chatItem from '../components/chat/item.chat.vue'
-  import axios from '../services/axios'
+  import chatItem from '../components/chat/ChatItem.vue'
+  import axiosInstance from '../services/axiosInstance'
   import { ref, onMounted } from 'vue'
 
   const chats = ref([])
 
   const fetchData = async () => {
     try {
-      const response = await axios.post('chat/getChats', {
+      const response = await axiosInstance.post('chat/getChats', {
         userId: '8f8bcbd7-16aa-44ae-ba6d-764db0ca7f2e'
       })
       chats.value = response.data
@@ -36,16 +23,27 @@
   })
 </script>
 
-<style scoped lang="scss">
-  // chats (list on the left)
+<template>
+  <div class="chats">
+    <h3 class="chats-title3">
+      <arrowIcon class="chats-title3-icon" /> All Messages
+    </h3>
+    <ul class="chats-list">
+      <chatItem v-for="chat in chats" :key="chat.userId" :chat="chat" />
+    </ul>
+  </div>
+
+  <div class="chat-messages"></div>
+</template>
+
+<style scoped>
   .chats {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .chats__title3 {
-    width: max-content;
+  .chats-title3 {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -53,40 +51,40 @@
     color: var(--color-text-second);
   }
 
-  .chats__icon {
+  .chats-title3-icon {
     width: 27px;
-    height: max-content;
+    height: auto;
     fill: var(--color-main);
     transform: rotate(-90deg);
   }
 
-  .chats__list {
+  .chats-list {
     width: 100%;
     max-height: 100%;
     overflow-y: auto;
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // Internet Explorer, Edge
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer, Edge */
   }
 
-  .chat__list::-webkit-scrollbar {
-    display: none; // Chrome, Safari, Opera
+  /* Chrome, Safari, Opera */
+  .chats-list::-webkit-scrollbar {
+    display: none;
   }
 
-  // chat messages (window on the right)
-  .chatMessages {
+  .chat-messages {
     position: absolute;
     width: 100%;
     height: 100%;
     transform: translateX(100%);
   }
 
-  // Responsive
+  /* Media query for larger screens */
   @media (min-width: 768px) {
     .chats {
       width: 380px;
     }
 
-    .chatMessages {
+    .chat-messages {
       position: static;
       width: calc(100% - 380px);
       transform: none;
