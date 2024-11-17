@@ -16,7 +16,8 @@ This project is the **frontend** component of the **Ryft** platform, an educatio
 ### 📜 License
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) by [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://github.com/PiotrO9)
 
----
+
+
 
 ## 🚀 Getting Started
 Clone the repository and set up the project locally: 
