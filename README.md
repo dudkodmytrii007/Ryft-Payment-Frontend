@@ -31,12 +31,12 @@ cd ryft-frontend
 npm install
 ```
 
-* Compile and Hot-Reload for Development
+3. Compile and Hot-Reload for Development
 ```sh
 npm run dev
 ```
 
-* Type-Check, Compile, and Minify for Production
+4. Type-Check, Compile, and Minify for Production
 ```sh
 npm run build
 ```
