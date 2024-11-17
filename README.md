@@ -1,18 +1,22 @@
 # Ryft Frontend
 This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.
 
+---
 
 ### 🛠️ Tools and Technologies
-[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=fff)](#)
+[![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)]
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-[![Sass](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff)](#)
-[![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#)
+[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]
+[![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white)]
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]
 
+---
 
 ### 📜 License
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) by [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://github.com/PiotrO9)
 
+---
 
 ## 🚀 Getting Started
 Clone the repository and set up the project locally: 
