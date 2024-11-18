@@ -21,6 +21,8 @@ By [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://g
 <br>
 
 ## 🚀 Getting Started
+To ensure the proper functioning of the project, the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)** must also be installed and configured.
+<br>
 **1.** Clone the repository:
 ```sh
 git clone https://github.com/your-username/ryft-frontend.git  
@@ -41,5 +43,3 @@ npm run dev
 ```sh
 npm run build
 ```
-
-**5.** To ensure the proper functioning of the project, the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)** must also be installed and configured.
