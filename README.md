@@ -1,4 +1,4 @@
-# Ryft Frontend
+# Ryft FRONTEND
 This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.<br><br>
 
 The frontend integrates with the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)**, which handles server-side operations such as authentication, API management, and data persistence.
