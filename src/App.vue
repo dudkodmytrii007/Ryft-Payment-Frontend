@@ -4,7 +4,7 @@
   </main>
 </template>
 
-<style scoped type="scss">
+<style scoped>
   main {
     position: relative;
     width: 100%;

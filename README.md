@@ -1,5 +1,7 @@
 # Ryft Frontend
-This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.
+This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.<br><br>
+
+The frontend integrates with the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)**, which handles server-side operations such as authentication, API management, and data persistence.
 
 <br>
 
@@ -19,23 +21,25 @@ By [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://g
 <br>
 
 ## 🚀 Getting Started
-1. Clone the repository:
+**1.** Clone the repository:
 ```sh
 git clone https://github.com/your-username/ryft-frontend.git  
 cd ryft-frontend  
 ```
 
-2. Install dependencies:
+**2.** Install dependencies:
 ```sh
 npm install
 ```
 
-3. Compile and Hot-Reload for Development
+**3.** Compile and Hot-Reload for Development
 ```sh
 npm run dev
 ```
 
-4. Type-Check, Compile, and Minify for Production
+**4.** Type-Check, Compile, and Minify for Production
 ```sh
 npm run build
 ```
+
+**5.** To ensure the proper functioning of the project, the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)** must also be installed and configured.
