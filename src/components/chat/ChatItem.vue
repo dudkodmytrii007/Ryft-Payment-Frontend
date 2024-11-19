@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <li class="chat-item" v-if="chat">
+  <li class="chat-item">
     <img :src="chat.avatar" :alt="`Profile picture of ${chat.name}`" class="chat-item-avatar" />
     <h4 class="chat-item-username">{{ chat.name }}</h4>
     <p class="chat-item-lastmsg">Ostatnia wiadomość</p>

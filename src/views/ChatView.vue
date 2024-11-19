@@ -1,18 +1,18 @@
 <script lang="ts" setup>
   import arrowIcon from '../components/icons/arrow.icon.vue'
+  import FriendsRoll from '../components/FriendsRoll.vue'
   import chatItem from '../components/chat/ChatItem.vue'
   import axiosInstance from '../services/axiosInstance'
   import { ref, onMounted } from 'vue'
 
   const chats = ref([])
 
-  const fetchData = async () => {
+  async function fetchData() {
     try {
       const response = await axiosInstance.post('chat/getChats', {
-        userId: '8f8bcbd7-16aa-44ae-ba6d-764db0ca7f2e'
+        userId: '020139f7-de69-4a83-a632-9136d72d22bf'
       })
       chats.value = response.data
-      console.log(response.data)
     } catch (error) {
       console.error('Error while downloading data:', error)
     }
@@ -25,6 +25,7 @@
 
 <template>
   <div class="chats">
+    <FriendsRoll />
     <h3 class="chats-title3">
       <arrowIcon class="chats-title3-icon" /> All Messages
     </h3>
