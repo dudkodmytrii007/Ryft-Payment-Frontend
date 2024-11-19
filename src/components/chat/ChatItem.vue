@@ -4,13 +4,15 @@
 </script>
 
 <template>
-  <li class="chat-item">
-    <img :src="chat.avatar" :alt="`Profile picture of ${chat.name}`" class="chat-item-avatar" />
-    <h4 class="chat-item-username">{{ chat.name }}</h4>
-    <p class="chat-item-lastmsg">Ostatnia wiadomość</p>
-    <span class="chat-item-badge">4</span>
-    <span class="chat-item-lastactive">6:49 PM</span>
-  </li>
+  <router-link :to="`/chat/${chat.chatId}`">
+    <li class="chat-item">
+      <img :src="chat.avatar" :alt="`Profile picture of ${chat.name}`" class="chat-item-avatar" />
+      <h4 class="chat-item-username">{{ chat.name }}</h4>
+      <p class="chat-item-lastmsg">Ostatnia wiadomość</p>
+      <span class="chat-item-badge">4</span>
+      <span class="chat-item-lastactive">6:49 PM</span>
+    </li>
+  </router-link>
 </template>
 
 <style scoped>

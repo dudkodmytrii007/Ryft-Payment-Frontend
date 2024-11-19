@@ -3,7 +3,14 @@
   import axiosInstance from '../services/axiosInstance'
   import UserStatus from './UserStatus.vue'
 
-  const friendsArray = ref([])
+  const friendsArray = ref<{ 
+    friendUserData: { 
+      userId: string; 
+      avatar: string; 
+      name: string; 
+      isOnline: boolean; 
+    }; 
+  }[]>([]);
 
   async function getFriends() {
     try {
@@ -12,7 +19,6 @@
       })
 
       friendsArray.value = response.data
-      console.log(friendsArray)
 
     } catch (error) {
       console.error('Error while downloading data:', error)
@@ -48,7 +54,7 @@
     max-width: 100%;
     display: flex;
     gap: 25px;
-    padding: 0 20px;
+    padding: 4px 20px 0 20px;
     overflow-x: auto;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer, Edge */
@@ -61,9 +67,10 @@
 
   .friends-roll-item {
     position: relative;
+    width: 70px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     gap: 10px;
     cursor: pointer;
   }
