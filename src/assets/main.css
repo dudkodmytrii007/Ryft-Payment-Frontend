@@ -4,21 +4,20 @@
 
 /* Color palette */
 :root {
-  --color-dark: #252730;
-  --color-darker: #1F2127;
-  --color-light-gray: #878897;
-  --color-dark-gray: #52575D;
-  --color-light: #FFFFFF;
-  --color-purple: #695DCC;
-  --color-red: #ED6D55;
-  --color-blue: #538AF7;
+  --color-darker-black: #161819;
+  --color-black: #242728;
+  --color-darker-gray: #242728;
+  --color-gray: #7B7D7E;
+  --color-white: #FFFFFF;
+  --color-blue: #5D9EF7;
 
-  --color-background-main: var(--color-darker);
-  --color-background-second: var(--color-dark);
-  --color-text-main: var(--color-light);
-  --color-text-second: var(--color-light-gray);
-  --color-elements: var(--color-dark-gray);
-  --color-main: var(--color-purple);
+  --color-background-main: var(--color-darker-black);
+  --color-background-second: var(--color-black);
+  --color-text-main: var(--color-white);
+  --color-text-second: var(--color-gray);
+  --color-icon: var(--color-gray);
+  --color-elements: var(--color-darker-gray);
+  --color-main: var(--color-main);
 
   --color-status-online: #64B385;
   --color-status-away: #EEAA41;
