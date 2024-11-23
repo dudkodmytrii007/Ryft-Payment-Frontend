@@ -17,7 +17,7 @@
   --color-background-second: var(--color-dark);
   --color-text-main: var(--color-light);
   --color-text-second: var(--color-light-gray);
-  --color-icon: var(--color-dark-gray);
+  --color-elements: var(--color-dark-gray);
   --color-main: var(--color-purple);
 
   --color-status-online: #64B385;

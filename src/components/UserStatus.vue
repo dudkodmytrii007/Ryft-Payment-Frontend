@@ -1,11 +1,11 @@
 <script type="ts" setup>
-  const props = defineProps({
+  const { isOnline } = defineProps({
     isOnline: Boolean
   })
 </script>
 
 <template>
-  <div class="user-status" :class="{ 'online': props.isOnline }"></div>
+  <div class="user-status" :class="{ 'online': isOnline }"></div>
 </template>
 
 <style scoped>

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   const { chat } = defineProps(['chat'])
-  console.log(chat)
 </script>
 
 <template>
@@ -54,6 +53,7 @@
     grid-column: 2;
     grid-row: 1;
     align-self: end;
+    color: var(--color-text-main);
   }
 
   .chat-item-lastmsg {
@@ -90,7 +90,7 @@
     padding: 3px;
   }
 
-  .chat-item:hover > .chat-item-badge {
+  .chat-item:hover > .item-badge {
     color: var(--color-background-second);
   }
 </style>
