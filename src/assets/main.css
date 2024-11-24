@@ -17,7 +17,7 @@
   --color-text-second: var(--color-gray);
   --color-icon: var(--color-gray);
   --color-elements: var(--color-darker-gray);
-  --color-main: var(--color-main);
+  --color-special-accent: var(--color-blue);
 
   --color-status-online: #64B385;
   --color-status-away: #EEAA41;

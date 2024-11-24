@@ -20,7 +20,6 @@
     flex-direction: column;
     z-index: 0;
     padding: 20px 30px 0 30px;
-    border-right: 2px solid var(--color-background-second);
   }
 
   main {
@@ -36,6 +35,7 @@
   @media (min-width: 768px) {
     header {
       width: 380px;
+      border-right: 2px solid var(--color-background-second);
     }
 
     main {

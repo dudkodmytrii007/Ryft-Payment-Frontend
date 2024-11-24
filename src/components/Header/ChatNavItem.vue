@@ -22,7 +22,7 @@
     grid-template-columns: 55px 2.8fr 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 18px;
-    padding: 18px 25px;
+    padding: 18px 0;
   }
 
   .chat-item:not(:last-child)::after {
@@ -38,7 +38,7 @@
   .chat-item:hover {
     cursor: pointer;
     background-color: var(--color-background-second);
-    border-left: 2px solid var(--color-main);
+    border-left: 2px solid var(--color-special-accent);
   }
 
   .chat-item-avatar {

@@ -2,6 +2,8 @@
   import { ref, onMounted } from 'vue'
   import axiosInstance from '../../services/axiosInstance'
 
+  import ChatNavSelect from './chatNavSelect.vue'
+  import ChatNavInput from './ChatNavInput.vue'
   import ChatNavItem from './ChatNavItem.vue'
 
   const myChats = ref([])
@@ -36,12 +38,10 @@
     <div class="chat-nav-top">
       <h2 class="chat-nav-title">Messages</h2>
 
-      <select name="myChats" id="myChats">
-        <option value="all">All</option>
-      </select>
+      <ChatNavSelect />
     </div>
 
-    <input type="text" placeholder="Search" class="chat-nav-input">
+    <ChatNavInput />
 
     <ul class="chat-nav-list" v-for="chat in myChats" :key="chat.chatId">
       <ChatNavItem :chat="chat" />
@@ -54,6 +54,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 
   .chat-nav-top {
@@ -65,26 +66,6 @@
   .chat-nav-title {
     font-size: 140%;
     font-weight: 500;
-  }
-
-  #myChats {
-    background-color: var(--color-background-main);
-    color: var(--color-text-main);
-    border: 0;
-    outline: none;
-  }
-
-  #myChats option {
-    background-color: red;
-  }
-
-  .chat-nav-input {
-    width: 100%;
-    height: 40px;
-    border-radius: 12px;
-    background-color: var(--color-background-second);
-    border: none;
-    outline: none;
   }
 
   .chat-nav-list {
