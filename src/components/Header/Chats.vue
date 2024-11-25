@@ -69,6 +69,8 @@
   }
 
   .chats ul {
+    width: calc(100% + 60px);
+    margin-left: -30px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;

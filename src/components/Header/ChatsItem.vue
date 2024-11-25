@@ -14,21 +14,22 @@
 </template>
 
 <style scoped>
-  .chats-item {
+  .chats-item a {
+    text-decoration: none;
+    color: inherit;
     width: 100%;
-    height: 88px;
+    height: 94px;
     display: grid;
     align-items: center;
     grid-template-columns: 58px 1fr 35px;
     grid-template-rows: 1fr 1fr;
     column-gap: 15px;
-    padding: 15px 0;
+    padding: 18px 30px;
   }
 
-  .chats-item a {
-    display: contents;
-    text-decoration: none;
-    color: inherit;
+  .chats-item a:hover {
+    border-left: 2px solid var(--color-special-accent);
+    padding-left: 28px;
   }
 
   .avatar {
@@ -46,7 +47,7 @@
     text-overflow: ellipsis;
     grid-column: 2;
     grid-row: 1;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .last-msg {
@@ -61,14 +62,14 @@
 
   .badge {
     height: 22px;
-    min-width: 22px;
+    min-width: 21px;
     display: flex;
     align-items: center;
     justify-content: center;
     grid-column: 3;
     grid-row: span 2;
-    justify-self: center;
-    padding: 0 6px;
+    justify-self: right;
+    padding: 0 5px;
     border-radius: 10px;
     font-size: 85%;
     font-weight: bold;
