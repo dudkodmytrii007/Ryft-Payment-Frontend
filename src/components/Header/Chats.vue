@@ -2,9 +2,9 @@
   import { ref, onMounted } from 'vue'
   import axiosInstance from '../../services/axiosInstance'
 
-  import ChatNavSelect from './chatNavSelect.vue'
-  import ChatNavInput from './ChatNavInput.vue'
-  import ChatNavItem from './ChatNavItem.vue'
+  import ChatsSelect from './ChatsSelect.vue'
+  import SearchBar from '../shared/SearchBar.vue'
+  import ChatsItem from './ChatsItem.vue'
 
   const myChats = ref([])
 
@@ -34,41 +34,41 @@
 </script>
 
 <template>
-  <nav class="chat-nav">
-    <div class="chat-nav-top">
-      <h2 class="chat-nav-title">Messages</h2>
+  <div class="chats">
+    <div class="chats-top">
+      <h2>Messages</h2>
 
-      <ChatNavSelect />
+      <ChatsSelect />
     </div>
 
-    <ChatNavInput />
+    <SearchBar />
 
-    <ul class="chat-nav-list" v-for="chat in myChats" :key="chat.chatId">
-      <ChatNavItem :chat="chat" />
+    <ul>
+      <ChatsItem v-for="chat in myChats" :key="chat.chatId" :chat="chat" />
     </ul>
-  </nav>
+  </div>
 </template>
 
 <style scoped>
-  .chat-nav {
+  .chats {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  .chat-nav-top {
+  .chats-top {
     display: grid;
     grid-template-columns: auto 80px;
     align-items: center;
   }
 
-  .chat-nav-title {
+  .chats-top h2 {
     font-size: 140%;
     font-weight: 500;
   }
 
-  .chat-nav-list {
+  .chats ul {
     display: flex;
     flex-direction: column;
     overflow-y: auto;

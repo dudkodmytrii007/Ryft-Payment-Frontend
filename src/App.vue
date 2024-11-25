@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-  import ChatNav from './components/Header/ChatNav.vue'
+  import Chats from './components/Header/Chats.vue'
 </script>
 
 <template>
   <header>
-    <ChatNav />
+    <Chats />
   </header>
 
   <main>

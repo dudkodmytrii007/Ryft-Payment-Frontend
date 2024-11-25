@@ -10,6 +10,7 @@
   --color-gray: #7B7D7E;
   --color-white: #FFFFFF;
   --color-blue: #5D9EF7;
+  --color-red: #EE7D57;
 
   --color-background-main: var(--color-darker-black);
   --color-background-second: var(--color-black);
@@ -18,6 +19,7 @@
   --color-icon: var(--color-gray);
   --color-elements: var(--color-darker-gray);
   --color-special-accent: var(--color-blue);
+  --color-special-allert: var(--color-red);
 
   --color-status-online: #64B385;
   --color-status-away: #EEAA41;
