@@ -3,7 +3,7 @@
   import axiosInstance from '../../services/axiosInstance'
 
   import ChatsSelect from './ChatsSelect.vue'
-  import SearchBar from '../shared/SearchBar.vue'
+  import SearchBar from '@/components/shared/SearchBar.vue'
   import ChatsItem from './ChatsItem.vue'
 
   interface Chat {
