@@ -1,4 +1,4 @@
-<script type="ts" setup>
+<script lang="ts" setup>
   const { isOnline } = defineProps({
     isOnline: Boolean
   })

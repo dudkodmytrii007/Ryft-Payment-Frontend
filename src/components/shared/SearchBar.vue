@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import IconSearch from '../icons/IconSearch.vue'
+  import IconSearch from '@/assets/icons/IconSearch.vue'
 </script>
 
 <template>

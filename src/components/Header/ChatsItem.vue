@@ -1,17 +1,38 @@
 <script lang="ts" setup>
-  import UserStatus from '../shared/UserStatus.vue'
+  import { computed } from 'vue';
+  import UserStatus from '@/components/shared/UserStatus.vue';
 
-  const { chat } = defineProps(['chat'])
+  const { chat } = defineProps(['chat']);
+
+  const userId = sessionStorage.getItem('userId');
+
+  const chatMeta = computed(() => {
+    const lastMsgAuthor =
+      userId && userId === chat.lastUnreadMessageAuthorId
+        ? 'You'
+        : chat.lastUnreadMessageAuthor;
+
+    const unreadMsgBadge = chat.unreadMessagesAmount
+      ? chat.unreadMessagesAmount > 99
+        ? '+99'
+        : chat.unreadMessagesAmount
+      : null;
+
+    return { lastMsgAuthor, unreadMsgBadge };
+  });
 </script>
 
 <template>
   <li class="chats-item">
     <router-link :to="`/chat/${chat.chatId}`">
       <img :src="chat.avatar" :alt="chat.name" class="avatar" />
-      <UserStatus class="user-status" :isOnline="chat.isOnline"/>
+      <UserStatus class="user-status" :isOnline="chat.isOnline" />
       <h3 class="name">{{ chat.name }}</h3>
-      <p class="last-msg">Ostatnia wiadomość</p>
-      <span class="badge">2</span>
+      <p class="last-msg">
+        <span class="last-msg-author">{{ chatMeta.lastMsgAuthor }}:</span>
+        {{ chat.lastUnreadMessage }}
+      </p>
+      <span v-if="chatMeta.unreadMsgBadge" class="badge">{{ chatMeta.unreadMsgBadge }}</span>
     </router-link>
   </li>
 </template>
@@ -71,6 +92,11 @@
     grid-column: 2;
     grid-row: 2;
     color: var(--color-text-second);
+    font-size: 92%;
+  }
+
+  .last-msg-author {
+    color: var(--color-special-accent);
     font-size: 92%;
   }
 

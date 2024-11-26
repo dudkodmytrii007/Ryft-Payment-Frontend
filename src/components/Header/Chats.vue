@@ -6,7 +6,18 @@
   import SearchBar from '../shared/SearchBar.vue'
   import ChatsItem from './ChatsItem.vue'
 
-  const myChats = ref([])
+  interface Chat {
+    chatId: string;
+    avatar: string;
+    name: string;
+    isOnline: boolean;
+    lastUnreadMessage: string;
+    lastUnreadMessageAuthor: string;
+    lastUnreadMessageAuthorId: string;
+    unreadMessagesAmount: number;
+  }
+
+  const myChats = ref<Chat[]>([])
 
   async function getChats() {
     try {
@@ -52,6 +63,7 @@
 <style scoped>
   .chats {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -70,6 +82,7 @@
 
   .chats ul {
     width: calc(100% + 60px);
+    max-height: calc(100% - 115px);
     margin-left: -30px;
     display: flex;
     flex-direction: column;
