@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import UserStatus from '../shared/UserStatus.vue'
+
   const { chat } = defineProps(['chat'])
 </script>
 
@@ -6,6 +8,7 @@
   <li class="chats-item">
     <router-link :to="`/chat/${chat.chatId}`">
       <img :src="chat.avatar" :alt="chat.name" class="avatar" />
+      <UserStatus class="user-status" :isOnline="chat.isOnline"/>
       <h3 class="name">{{ chat.name }}</h3>
       <p class="last-msg">Ostatnia wiadomość</p>
       <span class="badge">2</span>
@@ -15,6 +18,7 @@
 
 <style scoped>
   .chats-item a {
+    position: relative;
     text-decoration: none;
     color: inherit;
     width: 100%;
@@ -39,6 +43,16 @@
     grid-column: 1;
     grid-row: span 2;
     border-radius: 50%;
+  }
+
+  .user-status {
+    position: absolute;
+    left: 69px;
+    bottom: 18px;
+  }
+
+  .chats-item a:hover .user-status {
+    left: 66px;
   }
 
   .name {
