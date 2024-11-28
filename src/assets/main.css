@@ -1,8 +1,6 @@
-/* Import fonts and elements (in CSS, you use @import for importing stylesheets) */
 @import './fonts';
 @import './elements';
 
-/* Color palette */
 :root {
   --color-darker-black: #161819;
   --color-black: #242728;
@@ -27,7 +25,6 @@
   --color-status-offline: #757D8A;
 }
 
-/* Global reset */
 *,
 *::before,
 *::after {
@@ -41,7 +38,6 @@
   font-size: 16px;
 }
 
-/* Body styles */
 body {
   height: 100dvh;
   width: 100%;

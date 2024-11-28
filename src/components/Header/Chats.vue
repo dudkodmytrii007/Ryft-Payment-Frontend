@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { ref, onMounted } from 'vue'
+  import { ref, computed, onMounted } from 'vue'
   import axiosInstance from '../../services/axiosInstance'
 
   import ChatsSelect from './ChatsSelect.vue'
@@ -17,7 +17,14 @@
     unreadMessagesAmount: number;
   }
 
-  const myChats = ref<Chat[]>([])
+  const myChats = ref<Chat[]>([]);
+  const searchQuery = ref<string>('');
+
+  const filteredChats = computed(() =>
+    myChats.value.filter(chat =>
+      chat.name.toLowerCase().includes(searchQuery.value.toLowerCase())
+    )
+  );
 
   async function getChats() {
     try {
@@ -52,10 +59,10 @@
       <ChatsSelect />
     </div>
 
-    <SearchBar />
+    <SearchBar v-model="searchQuery" />
 
     <ul>
-      <ChatsItem v-for="chat in myChats" :key="chat.chatId" :chat="chat" />
+      <ChatsItem v-for="chat in filteredChats" :key="chat.chatId" :chat="chat" />
     </ul>
   </div>
 </template>
@@ -86,6 +93,10 @@
     margin-left: -30px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
+  }
+
+  .chats ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari i Edge */
   }
 </style>

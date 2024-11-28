@@ -1,10 +1,12 @@
 <script lang="ts" setup>
   import IconSearch from '@/assets/icons/IconSearch.vue'
+
+  const searchQuery = defineModel<string>();
 </script>
 
 <template>
   <div class="search-bar">
-    <input type="text" placeholder="Search">
+    <input type="text" placeholder="Search" v-model="searchQuery">
     <IconSearch class="icon" />
   </div>
 </template>
