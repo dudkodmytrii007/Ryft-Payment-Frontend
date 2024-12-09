@@ -19,6 +19,6 @@
   .online {
     display: flex;
     background-color: #64B385;
-    border: 4px solid var(--color-background-main);
+    border: 4px solid var(--color-background-primary);
   }
 </style>

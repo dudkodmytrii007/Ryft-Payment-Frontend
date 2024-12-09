@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-  import Chats from './components/header/Chats.vue'
+  import MyProfil from '@/components/header/MyProfil.vue'
+  import Chats from '@/components/header/Chats.vue'
 </script>
 
 <template>
   <header>
+    <MyProfil />
     <Chats />
   </header>
 
@@ -19,7 +21,8 @@
     display: flex;
     flex-direction: column;
     z-index: 0;
-    padding: 20px 30px 0 30px;
+    gap: 35px;
+    padding-top: 20px;
   }
 
   main {
@@ -35,12 +38,13 @@
   @media (min-width: 768px) {
     header {
       width: 380px;
-      border-right: 2px solid var(--color-background-second);
+      border-right: 2px solid var(--color-background-secondary);
     }
 
     main {
       position: static;
-      width: calc(100% - 380px);
+      min-width: 0;
+      flex: 1;
       transform: none;
     }
   }

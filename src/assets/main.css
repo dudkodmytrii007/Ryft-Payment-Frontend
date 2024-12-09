@@ -2,27 +2,41 @@
 @import './elements';
 
 :root {
-  --color-darker-black: #161819;
-  --color-black: #242728;
-  --color-darker-gray: #242728;
-  --color-gray: #7B7D7E;
-  --color-white: #FFFFFF;
-  --color-blue: #5D9EF7;
-  --color-red: #EE7D57;
+  --color-deep-gray: #161819;
+  --color-dark-gray: #242728;
+  --color-charcoal: #242628;
+  --color-mid-gray: #7B7D7E;
+  --color-pure-white: #FFFFFF;
+  --color-lt-sky-gray: #F1F3F6;
+  --color-soft-cloud-gray: #F5F7FA;
+  --color-vivid-purple: #7352E9;
+  --color-warm-red: #F5503C;
 
-  --color-background-main: var(--color-darker-black);
-  --color-background-second: var(--color-black);
-  --color-text-main: var(--color-white);
-  --color-text-second: var(--color-gray);
-  --color-icon: var(--color-gray);
-  --color-elements: var(--color-darker-gray);
-  --color-special-accent: var(--color-blue);
-  --color-special-allert: var(--color-red);
+  --color-background-primary: var(--color-pure-white);
+  --color-background-secondary: var(--color-lt-sky-gray);
+  --color-background-elements: var(--color-soft-cloud-gray);
+  --color-text-primary: var(--color-deep-gray);
+  --color-text-secondary: var(--color-mid-gray);
+  --color-icon-primary: var(--color-deep-gray);
+  --color-icon-secondary: var(--color-deep-gray);
+  --color-accent-primary: var(--color-vivid-purple);
 
   --color-status-online: #88CD9B;
   --color-status-away: #EEAA41;
   --color-status-busy: #DE554E;
   --color-status-offline: #757D8A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: var(--color-deep-gray);
+    --color-background-secondary: var(--color-dark-gray);
+    --color-background-elements: var(--color-charcoal);
+    --color-text-primary: var(--color-pure-white);
+    --color-text-secondary: var(--color-mid-gray);
+    --color-icon-primary: var(--color-pure-white);
+    --color-accent-primary: var(--color-vivid-purple);
+  }
 }
 
 *,
@@ -41,7 +55,7 @@
 body {
   height: 100dvh;
   width: 100%;
-  color: var(--color-text-main);
-  background-color: var(--color-background-main);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }

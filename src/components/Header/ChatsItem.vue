@@ -13,8 +13,8 @@
         : chat.lastUnreadMessageAuthor;
 
     const unreadMsgBadge = chat.unreadMessagesAmount
-      ? chat.unreadMessagesAmount > 99
-        ? '+99'
+      ? chat.unreadMessagesAmount > 9
+        ? '+9'
         : chat.unreadMessagesAmount
       : null;
 
@@ -52,8 +52,18 @@
     padding: 18px 30px;
   }
 
+  .chats-item:not(:last-child) a::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 60px);
+    height: 1px;
+    bottom: 0;
+    left: 30px;
+    background-color: var(--color-background-secondary);
+  }
+
   .chats-item a:hover {
-    border-left: 2px solid var(--color-special-accent);
+    border-left: 2px solid var(--color-accent-primary);
     padding-left: 28px;
   }
 
@@ -91,30 +101,31 @@
     text-overflow: ellipsis;
     grid-column: 2;
     grid-row: 2;
-    color: var(--color-text-second);
+    color: var(--color-text-secondary);
     font-size: 92%;
   }
 
   .last-msg-author {
-    color: var(--color-special-accent);
+    color: var(--color-accent-primary);
+    font-weight: 500;
     font-size: 92%;
   }
 
   .badge {
-    height: 22px;
-    min-width: 21px;
+    height: 18px;
+    min-width: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     grid-column: 3;
     grid-row: span 2;
     justify-self: right;
-    padding: 0 5px;
-    border-radius: 10px;
-    font-size: 85%;
-    font-weight: bold;
-    background-color: var(--color-special-allert);
-    color: var(--color-text-main);
-    box-shadow: 0 0 5px var(--color-special-allert);
+    padding: 0 4px;
+    border-radius: 8px;
+    font-size: 80%;
+    font-weight: 500;
+    background-color: var(--color-accent-primary);
+    color: var(--color-pure-white);
+    box-shadow: 0 0 5px var(--color-accent-primary);
   }
 </style>
