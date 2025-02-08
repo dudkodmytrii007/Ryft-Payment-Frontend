@@ -84,7 +84,7 @@
   .message {
     width: fit-content;
     padding: 10px 20px;
-    background-color: var(--color-background-elements);
+    background-color: var(--color-element-primary);
     color: var(--color-pure-white);
     grid-column: 2;
   }
@@ -100,6 +100,7 @@
   .sent .message {
     grid-column: 1;
     background-color: var(--color-accent-primary);
+    color: var(--color-white);
   }
 
   .message:first-of-type {

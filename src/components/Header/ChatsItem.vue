@@ -126,7 +126,7 @@
     font-size: 80%;
     font-weight: 500;
     background-color: var(--color-accent-primary);
-    color: var(--color-pure-white);
+    color: var(--color-white);
     box-shadow: 0 0 5px var(--color-accent-primary);
   }
 </style>

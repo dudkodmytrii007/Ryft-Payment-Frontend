@@ -2,24 +2,37 @@
 @import './elements';
 
 :root {
-  --color-deep-gray: #161819;
-  --color-dark-gray: #242728;
-  --color-charcoal: #303336;
-  --color-mid-gray: #7B7D7E;
-  --color-pure-white: #FFFFFF;
-  --color-lt-sky-gray: #F1F3F6;
-  --color-soft-cloud-gray: #F5F7FA;
-  --color-vivid-purple: #7352E9;
-  --color-warm-red: #F5503C;
+  --color-pure-black: #000000;
+  --color-black: #161819;
+  --color-charcoal: #1A1D1E;
+  --color-dark-gray: #26282B;
+  --color-gray: #27292C;
+  --color-light-gray: #77797A;
+  --color-silver: #7B7D7E;
+  --color-steel-gray: #8A97AA;
+  --color-light-steel: #A8B4C8;
+  --color-orange: #EB7D56;
+  --color-purple: #6E5CF5;
+  --color-blue: #5D9EF7;
+  --color-gold: #F9DF7E;
+  --color-lightest-gray: #F1F3F6;
+  --color-light-blue: #ECF0F5;
+  --color-icy-gray: #E6EBF2;
+  --color-white: #FFFFFF;
 
-  --color-background-primary: var(--color-pure-white);
-  --color-background-secondary: var(--color-lt-sky-gray);
-  --color-background-elements: var(--color-soft-cloud-gray);
-  --color-text-primary: var(--color-deep-gray);
-  --color-text-secondary: var(--color-mid-gray);
-  --color-icon-primary: var(--color-deep-gray);
-  --color-icon-secondary: var(--color-deep-gray);
-  --color-accent-primary: var(--color-vivid-purple);
+  --color-background-primary: var(--color-white);
+  --color-background-secondary: var(--color-white);
+  --color-text-primary: var(--color-pure-black);
+  --color-text-secondary: var(--color-light-steel);
+  --color-element-primary: var(--color-lightest-gray);
+  --color-element-secondary: var(--color-light-blue);
+  --color-element-tertiary: var(--color-icy-gray);
+  --color-icon-primary: var(--color-steel-gray);
+  --color-icon-secondary: var(--color-blue);
+  --color-accent-primary: var(--color-blue);
+  --color-accent-secondary: var(--color-gold);
+  --color-accent-tertiary: var(--color-orange);
+  --color-accent-quaternary: var(--color-gold);
 
   --color-status-online: #88CD9B;
   --color-status-away: #EEAA41;
@@ -29,13 +42,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background-primary: var(--color-deep-gray);
-    --color-background-secondary: var(--color-dark-gray);
-    --color-background-elements: var(--color-charcoal);
-    --color-text-primary: var(--color-pure-white);
-    --color-text-secondary: var(--color-mid-gray);
-    --color-icon-primary: var(--color-pure-white);
-    --color-accent-primary: var(--color-vivid-purple);
+    --color-background-primary: var(--color-black);
+    --color-background-secondary: var(--color-charcoal);
+    --color-text-primary: var(--color-white);
+    --color-text-secondary: var(--color-light-gray);
+    --color-element-primary: var(--color-dark-gray);
+    --color-element-secondary: var(--color-gray);
+    --color-element-tertiary: var(--color-charcoal);
+    --color-icon-primary: var(--color-silver);
+    --color-icon-secondary: var(--color-silver);
+    --color-accent-primary: var(--color-blue);
+    --color-accent-secondary: var(--color-gold);
+    --color-accent-tertiary: var(--color-orange);
+    --color-accent-quaternary: var(--color-gold);
   }
 }
 

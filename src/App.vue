@@ -39,7 +39,7 @@
   @media (min-width: 768px) {
     header {
       width: 380px;
-      border-right: 2px solid var(--color-background-secondary);
+      border-right: 2px solid var(--color-element-tertiary);
     }
 
     main {

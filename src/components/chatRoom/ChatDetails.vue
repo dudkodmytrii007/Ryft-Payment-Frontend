@@ -59,15 +59,14 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    background-color: var(--color-background-secondary);
-    border-left: 5px solid var(--color-background-primary);
+    background-color: var(--color-element-tertiary);
+    border-left: 2px solid var(--color-element-tertiary);
     padding: 20px;
   }
 
   @media (min-width: 1140px) {
     .chat-details {
       position: static;
-      border: none;
     }
   }
 
