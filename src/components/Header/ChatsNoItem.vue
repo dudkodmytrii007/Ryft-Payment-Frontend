@@ -16,16 +16,16 @@
     grid-template-columns: 58px 1fr;
     grid-template-rows: 1fr 1fr;
     column-gap: 15px;
-    padding: 18px 30px;
+    padding: 18px 25px;
   }
 
   .no-chats:not(:last-child)::after {
     content: '';
     position: absolute;
-    width: calc(100% - 60px);
+    width: calc(100% - 50px);
     height: 1px;
     bottom: 0;
-    left: 30px;
+    left: 25px;
     background-color: var(--color-background-secondary);
   }
 

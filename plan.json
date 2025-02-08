@@ -1,0 +1,62 @@
+{
+  "userId": [
+    "d07267e1-d39f-4b53-bc6a-ae73a2b4e7ba",
+    "d07267e1-d39f-4b53-bc6a-ae73a2b4e7ba"
+  ]
+}
+
+
+{
+  "chatId": "bc553c10-0732-47f6-a817-8f8d8b34f2cc",
+}
+
+
+{
+  "chatId": "bc553c10-0732-47f6-a817-8f8d8b34f2cc",
+  "avatar": "https://avatars.githubusercontent.com/u/60962478",
+  "name": "Evert, Kayley",
+  "chatType": "private/group",
+  "isOnline": false/true,
+  "lastActivity": "2024-11-28T19:51:40.138Z",
+  "unreadMessagesAmount": 21,
+  "hidden": true/false,
+  "lastMessage": "Demulceo casso asporto rem teres truculenter.",
+  "lastMessageAuthor": "Kayley",
+  "lastMessageAuthorId": "4c1a37ed-8f20-439a-a469-e353265bc392",
+  "lastMessageTimestamp": "2024-11-28T19:51:40.138Z"
+}
+
+
+
+{
+  "userId": "d07267e1-d39f-4b53-bc6a-ae73a2b4e7ba",
+  "name": "Kayley",
+  "avatar": "https://avatars.githubusercontent.com/u/60962478",
+  "banner": "https://avatars.githubusercontent.com/u/60962478",
+  "isOnline": true/false,
+  "lastActivity": "2024-11-28T19:51:40.138Z",
+  "tags": [
+    "gamer",
+    "travel",
+    "motorcycles",
+    "streetfood"
+  ]
+}
+
+
+[
+  {
+    "userId": "d07267e1-d39f-4b53-bc6a-ae73a2b4e7ba",
+    "name": "Kayley",
+    "avatar": "https://avatars.githubusercontent.com/u/60962478",
+    "isOnline": true/false,
+    "owner": true/false,
+  },
+  {
+    "userId": "d07267e1-d39f-4b53-bc6a-ae73a2b4e7ba",
+    "name": "Kayley",
+    "avatar": "https://avatars.githubusercontent.com/u/60962478",
+    "isOnline": true/false,
+    "owner": true/false
+  }
+]

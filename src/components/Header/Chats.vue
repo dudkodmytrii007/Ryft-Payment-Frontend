@@ -22,6 +22,8 @@
   const searchQuery = ref<string>('');
   const currentChatType = ref<string>('all');
 
+  localStorage.setItem('userId', '06e2f6d0-33bd-4e4f-a88c-7590333d66ed');
+
   async function getChats() {
     try {
       const userId = localStorage.getItem('userId');
@@ -92,6 +94,7 @@
   .chat-type {
     width: 100%;
     display:flex;
+    padding: 0 15px;
   }
 
   .chat-type button {
@@ -139,7 +142,7 @@
   }
 
   .search-bar {
-    padding: 0 30px;
+    padding: 0 25px;
   }
 
   .chats ul {

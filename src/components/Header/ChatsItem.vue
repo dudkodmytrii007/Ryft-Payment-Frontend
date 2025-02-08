@@ -7,10 +7,10 @@
   const userId = sessionStorage.getItem('userId');
 
   const chatMeta = computed(() => {
-    const lastMsgAuthor =
+    const lastAuthor =
       userId && userId === chat.lastUnreadMessageAuthorId
         ? 'You'
-        : chat.lastUnreadMessageAuthor;
+        : chat.lastAuthor;
 
     const unreadMsgBadge = chat.unreadMessagesAmount
       ? chat.unreadMessagesAmount > 9
@@ -18,7 +18,7 @@
         : chat.unreadMessagesAmount
       : null;
 
-    return { lastMsgAuthor, unreadMsgBadge };
+    return { lastAuthor, unreadMsgBadge };
   });
 </script>
 
@@ -28,10 +28,11 @@
       <img :src="chat.avatar" :alt="chat.name" class="avatar" />
       <UserStatus class="user-status" :isOnline="chat.isOnline" />
       <h3 class="name">{{ chat.name }}</h3>
-      <p class="last-msg">
-        <span class="last-msg-author">{{ chatMeta.lastMsgAuthor }}:</span>
-        {{ chat.lastUnreadMessage }}
+      <p class="last-content" v-if="chat.lastMessage">
+        <span class="last-content-author">{{ chatMeta.lastAuthor }}:</span>
+        {{ chat.lastMessage }}
       </p>
+      <p class="last-content" v-if="!chat.lastMessage">Say hello 👋</p>
       <span v-if="chatMeta.unreadMsgBadge" class="badge">{{ chatMeta.unreadMsgBadge }}</span>
     </router-link>
   </li>
@@ -49,22 +50,22 @@
     grid-template-columns: 58px 1fr 35px;
     grid-template-rows: 1fr 1fr;
     column-gap: 15px;
-    padding: 18px 30px;
+    padding: 18px 25px;
   }
 
   .chats-item:not(:last-child) a::after {
     content: '';
     position: absolute;
-    width: calc(100% - 60px);
+    width: calc(100% - 50px);
     height: 1px;
     bottom: 0;
-    left: 30px;
+    left: 25px;
     background-color: var(--color-background-secondary);
   }
 
   .chats-item a:hover {
     border-left: 2px solid var(--color-accent-primary);
-    padding-left: 28px;
+    padding-left: 23px;
   }
 
   .avatar {
@@ -95,7 +96,7 @@
     font-weight: 600;
   }
 
-  .last-msg {
+  .last-content {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -105,7 +106,7 @@
     font-size: 92%;
   }
 
-  .last-msg-author {
+  .last-content-author {
     color: var(--color-accent-primary);
     font-weight: 500;
     font-size: 92%;

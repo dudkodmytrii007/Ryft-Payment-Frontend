@@ -13,7 +13,7 @@
 <style scoped>
   .my-profil {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
   }
