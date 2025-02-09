@@ -74,7 +74,7 @@
     object-fit: cover;
     grid-column: 1;
     grid-row: span 2;
-    border-radius: 50%;
+    border-radius: 22px;
   }
 
   .user-status {

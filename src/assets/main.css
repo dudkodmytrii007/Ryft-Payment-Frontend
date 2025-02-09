@@ -17,7 +17,6 @@
   --color-gold: #F9DF7E;
   --color-lightest-gray: #F1F3F6;
   --color-light-blue: #ECF0F5;
-  --color-icy-gray: #E6EBF2;
   --color-white: #FFFFFF;
 
   --color-background-primary: var(--color-white);
@@ -26,7 +25,7 @@
   --color-text-secondary: var(--color-light-steel);
   --color-element-primary: var(--color-lightest-gray);
   --color-element-secondary: var(--color-light-blue);
-  --color-element-tertiary: var(--color-icy-gray);
+  --color-element-tertiary: var(--color-light-blue);
   --color-icon-primary: var(--color-steel-gray);
   --color-icon-secondary: var(--color-blue);
   --color-accent-primary: var(--color-blue);

@@ -17,8 +17,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 15px 20px;
-    gap: 15px;
+    padding: 10px 20px;
   }
 
   input {
@@ -48,6 +47,7 @@
   .icon-plus {
     left: 30px;
     background-color: var(--color-accent-primary);
+    fill: var(--color-element-secondary);
     border-radius: 14px;
     padding: 2px;
     box-sizing: content-box;

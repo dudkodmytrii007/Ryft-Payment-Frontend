@@ -1,6 +1,12 @@
 <script lang="ts" setup>
   import IconCategory from '@/assets/icons/IconCategory.vue';
   import IconArrow from '@/assets/icons/IconArrow.vue';
+  import ChatDetailsMembers from './ChatDetailsMembers.vue';
+  import ChatDetailsMedia from './ChatDetailsMedia.vue';
+  import { ref } from 'vue';
+
+  const isMembersExpanded = ref(false);
+  const isMediaExpanded = ref(false);
 </script>
   
 <template>
@@ -15,35 +21,25 @@
     <section class="members">
       <label class="checkbox">
         <h3>
-          Members <span>8</span>
+          Members <span>2</span>
         </h3>
-        <input type="checkbox" />
+        <input type="checkbox" v-model="isMembersExpanded" />
         <IconArrow class="icon-arrow" />
       </label>
 
-      <ul>
-        <li>
-          <img src="https://avatars.githubusercontent.com/u/76972913" alt="" class="members-avatar">
-          Name Lastname
-        </li>
-
-        <li>
-          <img src="https://avatars.githubusercontent.com/u/76972913" alt="" class="members-avatar">
-          Name Lastname
-        </li>
-      </ul>
+      <ChatDetailsMembers :isMembersExpanded="isMembersExpanded" />
     </section>
 
     <section class="media">
       <label class="checkbox">
         <h3>
-          Media <span>2</span>
+          Media <span>8</span>
         </h3>
-        <input type="checkbox" />
+        <input type="checkbox" v-model="isMediaExpanded" />
         <IconArrow class="icon-arrow" />
       </label>
 
-      <ul></ul>
+      <ChatDetailsMedia :isMediaExpanded="isMediaExpanded" />
     </section>
   </div>
 </template>
@@ -51,20 +47,20 @@
 <style scoped>
   .chat-details {
     position: absolute;
-    width: 380px;
+    width: 350px;
     height: 100%;
     top: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    background-color: var(--color-element-tertiary);
+    gap: 40px;
+    background-color: var(--color-background-secondary);
     border-left: 2px solid var(--color-element-tertiary);
     padding: 20px;
   }
 
-  @media (min-width: 1140px) {
+  @media (min-width: 1130px) {
     .chat-details {
       position: static;
     }
@@ -80,12 +76,12 @@
 
   /* Top */
   .top button {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border: none;
     outline: none;
-    background-color: var(--color-background-elements);
+    background-color: var(--color-element-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,14 +90,14 @@
 
   .top button::before {
     content: "✕";
-    font-size: 18px;
+    font-size: 100%;
     color: var(--color-icon-primary);
     display: block;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
   }
 
   .top button:hover::before {
-    transform: scale(0.9);
+    transform: scale(0.82);
     color: var(--color-icon-primary);
   }
 
@@ -125,6 +121,8 @@
     padding-left: 10px;
     display: flex;
     flex-direction: column;
+    gap: 22px;
+    overflow-y: hidden;
   }
 
   section h3 {
@@ -133,21 +131,6 @@
 
   section h3 span {
     color: var(--color-text-primary);
-  }
-
-  section ul {
-    width: 100%;
-    list-style: none;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  section ul li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 
   .checkbox {
@@ -163,8 +146,12 @@
   .icon-arrow {
     position: relative;
     transition: transform 0.3s ease;
-    fill: var(--color-accent-primary);
+    fill: var(--color-accent-secondary);
     transition: transform 0.3s ease;
+  }
+
+  .checkbox:hover h3 {
+    color: var(--color-accent-secondary);
   }
 
   .checkbox input:checked + .icon-arrow {
@@ -177,12 +164,5 @@
 
   .checkbox:hover input:not(:checked) + .icon-arrow {
     transform: scale(1.2);
-  }
-
-  /* Members */
-  .members-avatar {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
   }
 </style>

@@ -30,7 +30,7 @@
     width: 42px;
     height: 42px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .name {

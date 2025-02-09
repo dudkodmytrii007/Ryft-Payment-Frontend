@@ -39,12 +39,12 @@
   }
 
   .bottom-shadow {
-    bottom: 75px;
+    bottom: 62px;
     background: linear-gradient(rgba(0, 0, 0, 0), var(--color-background-primary));
   }
 
   ul {
-    height: calc(100vh - 70px - 75px);
+    height: calc(100vh - 70px - 62px);
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@
     width: 36px;
     height: 36px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 14px;
     grid-row: span 2;
   }
 
@@ -83,7 +83,7 @@
 
   .message {
     width: fit-content;
-    padding: 10px 20px;
+    padding: 6px 16px;
     background-color: var(--color-element-primary);
     color: var(--color-pure-white);
     grid-column: 2;
@@ -104,26 +104,26 @@
   }
 
   .message:first-of-type {
-    border-radius: 8px 24px 24px 8px;
+    border-radius: 8px 20px 20px 8px;
   }
 
   .message:last-of-type {
-    border-radius: 8px 24px 24px 24px;
+    border-radius: 8px 20px 20px 20px;
   }
 
   .message:not(:first-of-type):not(:last-of-type) {
-    border-radius: 8px 24px 24px 8px;
+    border-radius: 8px 20px 20px 8px;
   }
 
   .sent .message:first-of-type {
-    border-radius: 24px 8px 8px 24px;
+    border-radius: 20px 8px 8px 20px;
   }
 
   .sent .message:last-of-type {
-    border-radius: 24px 8px 24px 24px;
+    border-radius: 20px 8px 20px 20px;
   }
 
   .sent .message:not(:first-of-type):not(:last-of-type) {
-    border-radius: 24px 8px 8px 24px;
+    border-radius: 20px 8px 8px 20px;
   }
 </style>
