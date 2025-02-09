@@ -25,7 +25,7 @@ To ensure the proper functioning of the project, the **[Ryft Backend](https://gi
 
 **1.** Clone the repository:
 ```sh
-git clone https://github.com/your-username/ryft-frontend.git  
+git clone https://github.com/Xdellta/Ryft-Frontend.git 
 cd ryft-frontend  
 ```
 
