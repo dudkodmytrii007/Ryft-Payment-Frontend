@@ -24,7 +24,7 @@
 
 <template>
   <li class="chats-item">
-    <router-link :to="`/chat/:${chat.chatId}`">
+    <router-link :to="`/chat/${chat.chatId}`">
       <img :src="chat.avatar" :alt="chat.name" class="avatar" />
       <UserStatus class="user-status" :isOnline="chat.isOnline" />
       <h3 class="name">{{ chat.name }}</h3>
