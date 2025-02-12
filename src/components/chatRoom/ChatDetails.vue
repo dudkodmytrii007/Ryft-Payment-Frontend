@@ -1,12 +1,45 @@
 <script lang="ts" setup>
+  import { ref, onMounted, computed, watch } from 'vue';
+  import { useRoute } from 'vue-router';
+  import axiosInstance from "../../services/axiosInstance";
   import IconCategory from '@/assets/icons/IconCategory.vue';
   import IconArrow from '@/assets/icons/IconArrow.vue';
-  import ChatDetailsMembers from './ChatDetailsMembers.vue';
+  import ChatDetailsMember from './ChatDetailsMember.vue';
   import ChatDetailsMedia from './ChatDetailsMedia.vue';
-  import { ref } from 'vue';
 
+  const route = useRoute();
+  const chatMembers = ref([]);
   const isMembersExpanded = ref(false);
   const isMediaExpanded = ref(false);
+  
+  const chatId = computed(() => route.params.chatId);
+  const membersCount = computed(() => chatMembers.value.length);
+
+  async function getMembers() {
+    try {
+      if (!chatId) {
+        console.error('Chat ID is missing or invalid');
+        return;
+      }
+
+      const response = await axiosInstance.post('chat/getAllUsersFromChat', {
+        chatId: chatId.value
+      })
+
+      chatMembers.value = response.data;
+
+    } catch(error) {
+      console.error("Error fetching chat members:", error);
+    }
+  }
+
+  onMounted(() => {
+    getMembers();
+  })
+
+  watch(chatId, () => {
+    getMembers();
+  });
 </script>
   
 <template>
@@ -21,13 +54,15 @@
     <section class="members">
       <label class="checkbox">
         <h3>
-          Members <span>2</span>
+          Members <span>{{ membersCount }}</span>
         </h3>
         <input type="checkbox" v-model="isMembersExpanded" />
         <IconArrow class="icon-arrow" />
       </label>
 
-      <ChatDetailsMembers :isMembersExpanded="isMembersExpanded" />
+      <ul>
+        <ChatDetailsMember v-for="member in chatMembers" :key="member.userId" :member="member" />
+      </ul>
     </section>
 
     <section class="media">
@@ -39,7 +74,9 @@
         <IconArrow class="icon-arrow" />
       </label>
 
-      <ChatDetailsMedia :isMediaExpanded="isMediaExpanded" />
+      <ul class="media-ul">
+        <ChatDetailsMedia />
+      </ul>
     </section>
   </div>
 </template>
@@ -164,5 +201,16 @@
 
   .checkbox:hover input:not(:checked) + .icon-arrow {
     transform: scale(1.2);
+  }
+
+  section ul {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .media-ul {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 </style>
