@@ -76,4 +76,5 @@ body {
   color: var(--color-text-primary);
   background-color: var(--color-background-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
 }

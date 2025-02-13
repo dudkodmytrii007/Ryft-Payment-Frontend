@@ -17,7 +17,7 @@
     height: max-content;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
   }
 
   img {

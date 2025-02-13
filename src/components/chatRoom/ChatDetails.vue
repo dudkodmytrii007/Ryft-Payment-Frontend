@@ -8,7 +8,15 @@
   import ChatDetailsMedia from './ChatDetailsMedia.vue';
 
   const route = useRoute();
-  const chatMembers = ref([]);
+
+  interface ChatMember {
+    userId: string;
+    name: string;
+    avatar: string;
+    isOnline: boolean;
+  }
+
+  const chatMembers = ref<ChatMember[]>([]);
   const isMembersExpanded = ref(false);
   const isMediaExpanded = ref(false);
   
@@ -33,12 +41,24 @@
     }
   }
 
+  function toggleCheckbox(type: 'members' | 'media') {
+    if (type === 'members') {
+      isMembersExpanded.value = !isMembersExpanded.value;
+      isMediaExpanded.value = false;
+    } else if (type === 'media') {
+      isMediaExpanded.value = !isMediaExpanded.value;
+      isMembersExpanded.value = false;
+    }
+  }
+
   onMounted(() => {
     getMembers();
-  })
+  });
 
   watch(chatId, () => {
     getMembers();
+    isMembersExpanded.value = false;
+    isMediaExpanded.value = false;
   });
 </script>
   
@@ -56,13 +76,25 @@
         <h3>
           Members <span>{{ membersCount }}</span>
         </h3>
-        <input type="checkbox" v-model="isMembersExpanded" />
+        <input 
+          type="checkbox" 
+          :checked="isMembersExpanded" 
+          @click="toggleCheckbox('members')" 
+        />
         <IconArrow class="icon-arrow" />
       </label>
 
-      <ul>
+      <div class="shadow top-shadow"></div>
+
+      <ul class="members-ul" 
+          :class="{'expanded': isMembersExpanded,
+                   'members-ul': !isMembersExpanded}"
+      >
         <ChatDetailsMember v-for="member in chatMembers" :key="member.userId" :member="member" />
+        <span v-for="n in 50" :key="n">Test member</span>
       </ul>
+
+      <div class="shadow bottom-shadow"></div>
     </section>
 
     <section class="media">
@@ -70,13 +102,25 @@
         <h3>
           Media <span>8</span>
         </h3>
-        <input type="checkbox" v-model="isMediaExpanded" />
+        <input 
+          type="checkbox" 
+          :checked="isMediaExpanded" 
+          @click="toggleCheckbox('media')" 
+        />
         <IconArrow class="icon-arrow" />
       </label>
 
-      <ul class="media-ul">
+      <div class="shadow top-shadow"></div>
+
+      <ul class="media-ul" 
+          :class="{'expanded': isMediaExpanded,
+                   'media-ul': !isMediaExpanded}"
+      >
         <ChatDetailsMedia />
+        <span v-for="n in 100" :key="n">Test media</span>
       </ul>
+
+      <div class="shadow bottom-shadow"></div>
     </section>
   </div>
 </template>
@@ -154,6 +198,7 @@
 
   /* Section */
   section {
+    position: relative;
     width: 100%;
     padding-left: 10px;
     display: flex;
@@ -203,14 +248,36 @@
     transform: scale(1.2);
   }
 
-  section ul {
+  .members-ul, .media-ul {
+    max-height: 100px;
     display: flex;
     gap: 12px;
-    flex-direction: column;
+    flex-wrap: wrap;
+    transition: max-height 0.2s ease-in-out;
+    overflow: hidden;
+    padding: 15px 0;
+    margin-top: -15px;
   }
 
-  .media-ul {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .expanded {
+    max-height: calc(100vh - 20px - 26px - 40px - 24px - 22px - 40px - 24px - 22px - 100px - 20px);
+    overflow-y: auto;
+  }
+
+  .shadow {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30px;
+  }
+
+  .top-shadow {
+    top: 31px;
+    background: linear-gradient(var(--color-background-secondary), rgba(0, 0, 0, 0));
+  }
+
+  .bottom-shadow {
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0), var(--color-background-secondary));
   }
 </style>

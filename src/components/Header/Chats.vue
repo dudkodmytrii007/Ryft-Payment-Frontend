@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
+import { useRouter, useRoute } from 'vue-router';
 import axiosInstance from "../../services/axiosInstance";
 
 import SearchBar from "@/components/shared/SearchBar.vue";
@@ -18,6 +19,8 @@ interface Chat {
   unreadMessagesAmount: number;
 }
 
+const route = useRoute();
+const router = useRouter();
 const myChats = ref<Chat[]>([]);
 const searchQuery = ref<string>("");
 const currentChatType = ref<string>("all");
@@ -41,6 +44,20 @@ async function getChats() {
   }
 }
 
+function setLatestChat() {
+  const urlChatId = route.params.chatId;
+
+  if (urlChatId || filteredChats.value.length === 0) {
+    return;
+  }
+
+  const chatId = filteredChats.value[0]?.chatId;
+  if (chatId) {
+    router.replace({ name: "chat", params: { chatId } });
+  }
+}
+
+
 const filteredChats = computed(() => {
   return myChats.value.filter((chat) => {
     const matchesSearch = chat.name
@@ -58,6 +75,11 @@ function changeChatType(type: string) {
 
 onMounted(() => {
   getChats();
+  setLatestChat();
+});
+
+watch(filteredChats, () => {
+  setLatestChat();
 });
 </script>
 
