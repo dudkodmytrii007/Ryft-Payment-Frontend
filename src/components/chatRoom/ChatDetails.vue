@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { ref, onMounted, computed, watch } from 'vue';
+  import { ref, onMounted, computed, watch, defineModel } from 'vue';
   import { useRoute } from 'vue-router';
   import axiosInstance from "../../services/axiosInstance";
   import IconCategory from '@/assets/icons/IconCategory.vue';
@@ -8,6 +8,7 @@
   import ChatDetailsMedia from './ChatDetailsMedia.vue';
 
   const route = useRoute();
+  const chatDetailsOpen = defineModel();
 
   interface ChatMember {
     userId: string;
@@ -68,7 +69,7 @@
       <h2>
         <IconCategory class="icon-category" />Chat details
       </h2>
-      <button></button>
+      <button @click="chatDetailsOpen = false"></button>
     </div>
 
     <section class="members">
@@ -91,7 +92,6 @@
                    'members-ul': !isMembersExpanded}"
       >
         <ChatDetailsMember v-for="member in chatMembers" :key="member.userId" :member="member" />
-        <span v-for="n in 50" :key="n">Test member</span>
       </ul>
 
       <div class="shadow bottom-shadow"></div>
@@ -117,7 +117,6 @@
                    'media-ul': !isMediaExpanded}"
       >
         <ChatDetailsMedia />
-        <span v-for="n in 100" :key="n">Test media</span>
       </ul>
 
       <div class="shadow bottom-shadow"></div>
@@ -174,12 +173,12 @@
     font-size: 100%;
     color: var(--color-icon-primary);
     display: block;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   .top button:hover::before {
-    transform: scale(0.82);
-    color: var(--color-icon-primary);
+    scale: 0.82;
+    color: var(--color-icon-secondary);
   }
 
   .top h2 {
