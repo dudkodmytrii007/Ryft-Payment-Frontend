@@ -45,15 +45,15 @@
   }
 
   .icon-settings {
-    width: 28px;
+    width: 26px;
     height: max-content;
-    fill: var(--color-icon-primary);
+    fill: var(--color-text-primary);
     transition: 0.2s ease-in-out;
   }
 
   .icon-settings:hover {
     cursor: pointer;
     scale: 1.04;
-    fill: var(--color-icon-secondary);
+    fill: var(--color-accent-primary);
   }
 </style>

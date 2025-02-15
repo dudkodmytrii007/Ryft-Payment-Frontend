@@ -9,19 +9,18 @@
 </script>
 
 <template>
-  <div class="chat-container">
+  <div class="chat-container" >
     <TopOverlay v-model="chatDetailsOpen" />
     <MsgBoard />
     <ChatInput />
   </div>
 
-  <ChatDetails v-show="chatDetailsOpen" v-model="chatDetailsOpen" />
+  <ChatDetails v-show="chatDetailsOpen" v-model="chatDetailsOpen" class="chat-details" />
 </template>
 
 <style scoped>
   .chat-container {
     position: relative;
     flex: 1;
-    min-width: 0;
   }
 </style>

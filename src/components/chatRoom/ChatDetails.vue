@@ -178,7 +178,7 @@
 
   .top button:hover::before {
     scale: 0.82;
-    color: var(--color-icon-secondary);
+    color: var(--color-accent-primary);
   }
 
   .top h2 {
@@ -208,6 +208,7 @@
 
   section h3 {
     color: var(--color-text-secondary);
+    font-weight: 500;
   }
 
   section h3 span {
@@ -227,12 +228,12 @@
   .icon-arrow {
     position: relative;
     transition: transform 0.3s ease;
-    fill: var(--color-accent-secondary);
+    fill: var(--color-accent-primary);
     transition: transform 0.3s ease;
   }
 
   .checkbox:hover h3 {
-    color: var(--color-accent-secondary);
+    color: var(--color-accent-primary);
   }
 
   .checkbox input:checked + .icon-arrow {
