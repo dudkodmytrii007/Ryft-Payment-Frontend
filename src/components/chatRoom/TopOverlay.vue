@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   import { defineModel } from 'vue';
-  import IconSettings from '@/assets/icons/IconSettings.vue';
 
   const chatDetailsOpen = defineModel();
 </script>
@@ -12,7 +11,11 @@
       <span class="name">Chat name</span>
     </div>
 
-    <IconSettings class="icon-settings" v-show="!chatDetailsOpen" @click="chatDetailsOpen = true" />
+    <button v-show="!chatDetailsOpen" @click="chatDetailsOpen = true">
+      <div class="btn-line1"></div>
+      <div class="btn-line2"></div>
+      <div class="btn-line1"></div>
+    </button>
   </div>
 </template>
 
@@ -44,16 +47,35 @@
     font-weight: bold;
   }
 
-  .icon-settings {
-    width: 26px;
-    height: max-content;
-    fill: var(--color-text-primary);
-    transition: 0.2s ease-in-out;
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 
-  .icon-settings:hover {
-    cursor: pointer;
-    scale: 1.04;
-    fill: var(--color-accent-primary);
+  .btn-line1, .btn-line2 {
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-text-primary);
+    transition: 0.2s ease-in-out;
+    border-radius: 14px;
+  }
+
+  .btn-line2 {
+    width: 20px;
+    translate: 2px;
+  }
+
+  button:hover .btn-line1 {
+    translate: 3px;
+  }
+
+  button:hover .btn-line2 {
+    translate: -3px;
   }
 </style>
