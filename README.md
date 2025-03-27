@@ -1,7 +1,7 @@
 # Ryft FRONTEND
 This project is the **frontend** component of the **Ryft** platform, an educational social media project. The goal is to simulate the functionalities of a modern social media platform with a focus on learning and development.<br><br>
 
-The frontend integrates with the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)**, which handles server-side operations such as authentication, API management, and data persistence.
+The frontend integrates with the **[Ryft Backend](https://github.com/dudkodmytrii007/Ryft-Payment-Backend)**, which handles server-side operations such as authentication, API management, and data persistence.
 
 <br>
 
@@ -16,17 +16,17 @@ The frontend integrates with the **[Ryft Backend](https://github.com/Xdellta/Ryf
 
 ## 📜 License
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)<br>
-By [Patryk Piotrowski](https://github.com/Xdellta) & [Piotr Ostrowski](https://github.com/PiotrO9)
+By [Dudko Dmytrii](https://github.com/dudkodmytrii007) & [Piotr Ostrowski](https://github.com/PiotrO9)
 
 <br>
 
 ## 🚀 Getting Started
-To ensure the proper functioning of the project, the **[Ryft Backend](https://github.com/Xdellta/Ryft-Backend)** must also be installed and configured.<br><br>
+To ensure the proper functioning of the project, the **[Ryft Backend](https://github.com/dudkodmytrii007/Ryft-Payment-Backend)** must also be installed and configured.<br><br>
 
 **1.** Clone the repository:
 ```sh
-git clone https://github.com/Xdellta/Ryft-Frontend.git 
-cd ryft-frontend  
+git clone https://github.com/dudkodmytrii007/Ryft-Payment-Frontend.git 
+cd ryft-payment-frontend  
 ```
 
 **2.** Install dependencies:
